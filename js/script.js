@@ -6,9 +6,10 @@ createApp({
             diskList: "",
         };
     },
+    created(){
+        axios.get("http://localhost/boolean/php-dischi-json/server.php").then(((resp) => this.diskList = resp.data));
+    },
     methods: {
-        getDisks(){
-            axios.get()
-        },
+        
     },
 }).mount("#app");
