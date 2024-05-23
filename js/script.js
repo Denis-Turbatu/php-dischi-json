@@ -7,7 +7,11 @@ createApp({
         };
     },
     created(){
-        axios.get("http://localhost/boolean/php-dischi-json/server.php").then(((resp) => this.diskList = resp.data));
+        axios.get("http://localhost/boolean/php-dischi-json/server.php").then((resp) => {
+            this.diskList = resp.data;
+            // debug
+            // console.log(this.diskList[0].title);
+        });
     },
     methods: {
         
