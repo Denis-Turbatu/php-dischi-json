@@ -9,17 +9,23 @@ if (isset($_POST["update_like"]) && isset($_POST["update_index"])) {
     // passo i dati in arrivo nelle variabili php
     $update_like = $_POST["update_like"];
     $update_index = $_POST["update_index"];
+    if ($update_like === "true" || $update_like = false) {
+        $update_like = true;
+    }elseif($update_like === "false" || $update_like = true){
+        $update_like = false;
+    }
+
     // Aggiorno i dati con  quelli nuovi
-    $list[$update_index] = [
-        "like" => $update_like,
-    ];
+    $list[$update_index]["like"] = $update_like;
 
     // Trasformo i dati di nuovo in json e li preparo per la risposta
-    $updated_json = json_encode($list);
+    $disks_list = json_encode($list);
+    file_put_contents("dischi.json", $disks_list);
 }
 
 // impostare che arriverà una risposta in json
 header("Content-Type: application/json");
 // stampo la risposta
-echo $updated_json;
+echo $disks_list;
+
 ?>

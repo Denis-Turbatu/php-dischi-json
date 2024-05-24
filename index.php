@@ -17,7 +17,7 @@
   <div id="app">
     <div class="container col-12 mt-5">
       <div class="row d-flex flex-wrap">
-        <div class="col-12 col-md-6 col-lg-4 text-center" v-for="curDisk, index in diskList">
+        <div class="col-12 col-md-6 col-lg-4 text-center" v-for="(curDisk, index) in diskList">
           <div class="card">
             <img :src="curDisk.poster" :alt="curDisk.title">
             <section>
