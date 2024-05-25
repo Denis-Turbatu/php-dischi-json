@@ -29,7 +29,7 @@ createApp({
             })
             .then((resp) => {
                 console.log(resp);
-                // this.diskList = resp.data;
+                this.diskList = resp.data;
             })
         }
     },
